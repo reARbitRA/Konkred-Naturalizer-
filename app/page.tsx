@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Navbar, ViewMode } from '@/components/Navbar';
+import { BentoDashboard } from '@/components/BentoDashboard';
 import { LiveTerminal } from '@/components/LiveTerminal';
 import { KnowledgeCenter } from '@/components/KnowledgeCenter';
 import { ArchitectureDiagram } from '@/components/ArchitectureDiagram';
@@ -123,7 +124,7 @@ export default function Home() {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {currentView === 'sandbox' && <LiveTerminal />}
+        {currentView === 'sandbox' && <BentoDashboard />}
         {currentView === 'docs' && (
           <KnowledgeCenter
             bookmarks={bookmarks}
