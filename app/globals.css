@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #0D0D0D;
+    --bg-secondary: #141414;
+    --card-bg: #141414;
+    --card-elevated: #1A1A1A;
+    --card-hover: #222222;
+    --border-color: #333333;
+    --border-active: #00FF41;
+    --text-primary: #E0E0E0;
+    --text-secondary: #999999;
+    --text-muted: #666666;
+    --accent-primary: #00FF41;
+    --accent-secondary: #00D4AA;
+    --accent-warm: #FFD700;
+    --accent-blue: #4DA8FF;
+    --code-bg: #000000;
+    --code-header: #1A1A1A;
+    --selection-bg: rgba(0, 255, 65, 0.25);
+    --shadow-color: rgba(0, 0, 0, 0.8);
+    --neon-glow: 0 0 10px rgba(0, 255, 65, 0.4);
+  }
+
+  [data-theme="light"] {
+    --bg-primary: #F4F6F9;
+    --bg-secondary: #EBF0F5;
+    --card-bg: #FFFFFF;
+    --card-elevated: #F8FAFC;
+    --card-hover: #F1F5F9;
+    --border-color: #DCE2E9;
+    --border-active: #10B981;
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --text-muted: #6B7280;
+    --accent-primary: #059669;
+    --accent-secondary: #0D9488;
+    --accent-warm: #D97706;
+    --accent-blue: #2563EB;
+    --code-bg: #F1F5F9;
+    --code-header: #E2E8F0;
+    --selection-bg: rgba(5, 150, 105, 0.2);
+    --shadow-color: rgba(100, 116, 139, 0.1);
+    --neon-glow: 0 0 10px rgba(5, 150, 105, 0.2);
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--text-primary);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+/* Bento Grid Utilities */
+.bento-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.bento-card:hover {
+  border-color: var(--border-active);
+}
+
+.bento-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
+}
+
+/* Glow Effects */
+.glow-green {
+  box-shadow: 0 0 8px var(--accent-primary);
+}
+
+.glow-primary {
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 15px rgba(0, 214, 170, 0.2);
+}
+
+.glow-warm {
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+/* Status indicator pulse animation */
+@keyframes bentoPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px var(--accent-primary);
+  }
+  50% {
+    opacity: 0.4;
+    box-shadow: 0 0 2px var(--accent-primary);
+  }
+}
+
+.status-pulse {
+  animation: bentoPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

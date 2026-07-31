@@ -1,0 +1,6 @@
+{
+  "name": "Arbitra QA Core",
+  "description": "Deterministic semantic rewrite engine, interactive knowledge system, QA validation gate, and API testing platform for ARBITRA QA CORE v6.2.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
